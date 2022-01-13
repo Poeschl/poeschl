@@ -8,4 +8,4 @@ Mostly on Home Assistant Addons and all tooling and software I use in my daily l
 
 
 [stats-badge]: https://github-readme-stats.vercel.app/api?username=poeschl&count_private=true&show_icons=true&theme=github_dark&title_color=d32f2f&icon_color=d32f2f&border_radius=4
-[language-badge]: https://github-readme-stats.vercel.app/api/top-langs?username=poeschl&count_private=true&show_icons=true&theme=github_dark&title_color=d32f2f&icon_color=d32f2f&border_radius=4&layout=compact&langs_count=6
+[language-badge]: https://github-readme-stats.vercel.app/api/top-langs?username=poeschl&count_private=true&show_icons=true&theme=github_dark&title_color=d32f2f&icon_color=d32f2f&border_radius=4&layout=compact&langs_count=6&exclude_repo=P-Assistant-config
