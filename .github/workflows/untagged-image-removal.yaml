@@ -1,0 +1,18 @@
+name: Remove all untagged images from all packages
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '5 0 * * *'
+
+jobs:
+  build:
+    name: Remove all untagged container from my packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete all untagged images
+        uses: Chizkiyahu/delete-untagged-ghcr-action@v3
+        with:
+          token: ${{ secrets.IMAGE_REMOVAL_PAT_TOKEN }}
+          repository_owner: ${{ github.repository_owner }}
+          untagged_only: true
+          owner_type: user
