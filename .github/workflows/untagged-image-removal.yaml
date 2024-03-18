@@ -10,9 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Delete all untagged images
+        id: deleted-action
         uses: Chizkiyahu/delete-untagged-ghcr-action@v3
         with:
           token: ${{ secrets.IMAGE_REMOVAL_PAT_TOKEN }}
           repository_owner: ${{ github.repository_owner }}
           untagged_only: true
           owner_type: user
+
+      - name: Output cleaned up images
+        run: |
+          echo "## :wastebasket: Summary" >> $GITHUB_STEP_SUMMARY
+          echo "Deleted images count: `${{ steps.deleted-action.outputs.num_deleted }}`" >> $GITHUB_STEP_SUMMARY
