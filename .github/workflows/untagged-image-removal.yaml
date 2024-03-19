@@ -21,4 +21,4 @@ jobs:
       - name: Output cleaned up images
         run: |
           echo "## :wastebasket: Summary" >> $GITHUB_STEP_SUMMARY
-          echo "Deleted images count: `${{ steps.deleted-action.outputs.num_deleted }}`" >> $GITHUB_STEP_SUMMARY
+          echo 'Deleted images count: <strong>${{ steps.deleted-action.outputs.num_deleted }}</strong>' >> $GITHUB_STEP_SUMMARY
