@@ -21,7 +21,9 @@ jobs:
 
       - name: Delete all untagged images
         id: deleted-action
-        uses: Chizkiyahu/delete-untagged-ghcr-action@main
+        uses: Chizkiyahu/delete-untagged-ghcr-action@v6
+        env:
+          ACTIONS_STEP_DEBUG: true
         with:
           token: ${{ secrets.IMAGE_REMOVAL_PAT_TOKEN }}
           repository_owner: ${{ github.repository_owner }}
