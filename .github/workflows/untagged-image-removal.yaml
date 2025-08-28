@@ -25,7 +25,13 @@ jobs:
           owner_type: user
           except_untagged_multiplatform: true
 
-      - name: Output cleaned up images
+      - name: "DEBUG: List package"
+        run: |
+          curl -sS \
+          -H "Authorization: Bearer ${{ secrets.IMAGE_REMOVAL_PAT_TOKEN }}" \
+          https://api.github.com/users/Poeschl/packages?package_type=container&per_page=100
+
+      - name: 🔊 Output cleaned up images
         run: |
           echo "## :wastebasket: Summary" >> $GITHUB_STEP_SUMMARY
           echo 'Deleted images count: <strong>${{ steps.deleted-action.outputs.num_deleted }}</strong>' >> $GITHUB_STEP_SUMMARY
