@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: Remove all untagged container from my packages
+    name: Remove all untagged images from my packages
     runs-on: ubuntu-latest
     steps:
 
