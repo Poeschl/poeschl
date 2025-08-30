@@ -24,12 +24,8 @@ jobs:
           untagged_only: true
           owner_type: user
           except_untagged_multiplatform: true
-
-      - name: "DEBUG: List package"
-        run: |
-          curl -sS \
-          -H "Authorization: Bearer ${{ secrets.IMAGE_REMOVAL_PAT_TOKEN }}" \
-          https://api.github.com/users/Poeschl/packages?package_type=container&per_page=100
+          # Remove images of all repositories of the owner
+          repository: ''
 
       - name: 🔊 Output cleaned up images
         run: |
